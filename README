@@ -1,0 +1,13 @@
+This is a ticketing system that supports 2 users (IT manager & normal user)
+
+User:
+- Raise a ticket
+- Check status of his tickets
+- re-new a ticket
+- copy a ticket & create similar ticket
+
+IT Manager:
+- check all the tickets (completed & not completed)
+- sort all the tickets wrt to date created
+- check details of a ticket, comment, resolve & mark completed
+- re-new a ticket
