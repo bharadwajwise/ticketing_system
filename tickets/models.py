@@ -7,8 +7,7 @@ class Ticket(models.Model):
 	comment = models.CharField('admin comment', max_length=200)
 
 class User(models.Model):
-	ticket = models.ForeignKey(Tickets) # change relationship to one-to-many
+	ticket = models.ForeignKey(Ticket) # change relationship to one-to-many
 	username = models.CharField(max_length=200)
 	name = models.CharField(max_length=200)
 	password = models.CharField(max_length=80) #change it to password field
-	
