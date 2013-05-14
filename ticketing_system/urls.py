@@ -5,13 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'ticketing_system.views.home', name='home'),
-    # url(r'^ticketing_system/', include('ticketing_system.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^tickets/$', 'tickets.views.index'),
+    url(r'^tickets/user/1/(?P<ticket_id>\d+)/$', 'users.views.normal'),
+    url(r'^tickets/user/2/(?P<ticket_id>\d+)/$', 'users.view.manager'),
 )
