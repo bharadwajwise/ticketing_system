@@ -1,7 +1,7 @@
 {% if 1 %}
   <ul>
   {% for ticket in ticket_list %}
-    <li> <a href="/tickets/{{ticket.id}}/"> The Ticket number {{ticket.id}} has been created by {{ticket.created_by}} at {{pub_date}}. <br /> The ticket is now {{ticket.status}}. <br />Comments: {{ticket.comment}} </a></li>
+    <li> <a href="/tickets/{{ticket.id}}/"> The Ticket number {{ticket.id}} has been created by {{ticket.created_by}} at {{ticket.pub_date|date:"M-D-Y"}}.<br /> The ticket is now {{ticket.status}}. <br />Comments: {{ticket.comment}} </a></li>
   {% endfor %}
   </ul>
 {% else %}
