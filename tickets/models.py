@@ -2,7 +2,7 @@ from django.db import models
 import datetime
 from django.utils import timezone
 
-class User(models.Model):
+class Ticketuser(models.Model):
         username = models.CharField(max_length=200)
 
         def __unicode__(self):
@@ -12,7 +12,7 @@ class Ticket(models.Model):
 	status = models.CharField('ticket status', max_length=200)
 	pub_date = models.DateTimeField('date created')
 	comment = models.CharField('manager comment', max_length=200)
-        created_by = models.ForeignKey(User) 
+        created_by = models.ForeignKey(Ticketuser) 
         
 	def __unicode__(self):
 		return self.status
