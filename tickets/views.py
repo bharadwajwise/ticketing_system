@@ -9,3 +9,6 @@ def index(request):
         'ticket_list': ticket_list,
     })
     return HttpResponse(t.render(c))
+
+def detail(request, ticket_id):
+    return HttpResponse("This is Ticket number %s." % ticket_id)
