@@ -20,3 +20,11 @@ def detail(request, ticket_id):
 
 def add_ticket(request):
     return HttpResponse("Here you can add new tickets")
+
+def view_ticket(request, userid):
+    output_ticket = Ticket.objects.get(created_by=userid)
+    output_id = output_ticket.id
+    output_status = output_ticket.status
+    output_comment = output_ticket.comment
+    output_format = "Ticket no. " + str(output_id) + " has been created by you. Status: " + output_status + " Comments: " + output_comment
+    return HttpResponse(output_format)

@@ -8,6 +8,7 @@ class Ticketuser(models.Model):
         def __unicode__(self):
                 return self.username
 
+
 class Ticket(models.Model):
 	status = models.CharField('ticket status', max_length=200)
 	pub_date = models.DateTimeField('date created')
@@ -16,3 +17,7 @@ class Ticket(models.Model):
         
 	def __unicode__(self):
 		return self.status
+
+def AddForm(ModelForm):
+	class Meta:
+		model = Ticketuser
