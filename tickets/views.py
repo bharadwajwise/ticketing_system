@@ -11,4 +11,12 @@ def index(request):
     return HttpResponse(t.render(c))
 
 def detail(request, ticket_id):
-    return HttpResponse("This is Ticket number %s." % ticket_id)
+    ticket = Ticket.objects.get(id=ticket_id)
+    t = loader.get_template("tickets/ticket.html")
+    c = Context({
+        'ticket': ticket,
+    })
+    return HttpResponse(t.render(c))
+
+def add_ticket(request):
+    return HttpResponse("Here you can add new tickets")

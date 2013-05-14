@@ -1,1 +1,9 @@
-
+{% if ticket %}
+    <p> Ticket ID: {{ticket.id}}</p>
+    <p> Ticket created by: {{ticket.created_by}} </p>
+    <p> Ticket published at: {{ticket.pub_date|date:"D-M-Y"}} </p>
+    <p> <b> Status of Ticket: </b> {{ticket.status}} </p>
+    <p> <i> Comments on Ticket: </i> {{ticket.comment}} </p>
+{% else %}
+  <p> This ticket is not available yet </p>
+{% endif %}
