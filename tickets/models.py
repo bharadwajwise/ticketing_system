@@ -17,7 +17,3 @@ class Ticket(models.Model):
         
 	def __unicode__(self):
 		return self.status
-
-def AddForm(ModelForm):
-	class Meta:
-		model = Ticketuser
