@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^tickets/add/$', 'tickets.views.add_ticket'),
     url(r'^user/(?P<userid>\S+)/$', 'tickets.views.view_ticket'), 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^create/(?P<userid>\S+)/$', 'tickets.views.add_ticket'),
 )

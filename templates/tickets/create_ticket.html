@@ -1,0 +1,6 @@
+<form action="/create/{{ user_id }}/" method="post"> {% csrf_token %}
+  <ul>
+    {{form.as_p}}
+  </ul>
+  <input type="submit" name="submit" value="Add Ticket" />
+</form>

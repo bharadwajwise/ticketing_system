@@ -1,21 +1,15 @@
 <h1> Tickets booked </h1>
 {% if output_ticket %}
-  <ul> 
-    <li> Ticket number: {{output_id}} </li> 
-    <li> Status: {{output_status}} </li> 
-    <li> Comments: {{output_comment}} </li>
-  </ul>   
+  <ul>
+    {% for ticket in output_ticket %}
+      <li> Ticket number: {{ticket.id}} </li> 
+      <li> Status: {{ticket.status}} </li> 
+      <li> Comments: {{ticket.comment}} </li>
+    {% endfor %}
+  </ul>
 {% else %}
   <p> You have no tickets booked yet </p>
 {% endif %}
 <br />
-<h2> Book Tickets </h2>
-<p> This is your user_id: {{user_id}} </p>
-<form action="/add/{{ user_id }}/" method="post">
-{% csrf_token %}
-  <input type="text" name="comment" id="comment"/>
-  <input type="submit" value="Add Ticket"/>
-</form> 
- 
-
-
+<br />
+<p> <a href="/create/{{ user_id }}"> Book Tickets Here </a> </p>

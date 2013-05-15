@@ -10,10 +10,10 @@ class Ticketuser(models.Model):
 
 
 class Ticket(models.Model):
-	status = models.CharField('ticket status', max_length=200)
+	status = models.CharField('ticket status', max_length=200, blank=True)
 	pub_date = models.DateTimeField('date created')
-	comment = models.CharField('manager comment', max_length=200)
+	comment = models.CharField('User comment', max_length=200)
         created_by = models.ForeignKey(Ticketuser) 
         
 	def __unicode__(self):
-		return self.status
+		return self.comment
