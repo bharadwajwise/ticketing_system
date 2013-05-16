@@ -7,11 +7,10 @@ from crispy_forms.bootstrap import FormActions, PrependedText, AppendedText
 class AddTicketForm(forms.ModelForm):
   
   def __init__(self, *args, **kwargs):
-    super(AddTicketForm, self).__init__(*args, **kwargs)
-    
+    super(AddTicketForm, self).__init__(*args, **kwargs) 
     self.helper = FormHelper(self)
     self.helper.add_input(Submit('submit', 'Add Comment and Ticket'))
-    
+     
 
   class Meta:
     model = Ticket
