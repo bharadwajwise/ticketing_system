@@ -6,7 +6,6 @@ from tickets.models import Ticket, Ticketuser
 from forms import AddTicketForm
 from django.core.context_processors import csrf
 from django.utils import timezone
-
 from bootstrap_toolkit.widgets import BootstrapUneditableInput
 
 def index(request):
@@ -43,7 +42,7 @@ def add_ticket(request, userid):
     	args = {}
     	args.update(csrf(request))
 	args['form'] = form
-	t = loader.get_template('tickets/create_ticket.html')
+	# t = loader.get_template('tickets/create_ticket.html')
 	context = {
 	    'user_id': userid,
 	    'form': form,
