@@ -1,15 +1,14 @@
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 {% load bootstrap_toolkit %}
-<h1> Tickets booked </h1>
+<h3> Tickets booked by {{ username }}</h3>
 {% if output_ticket %}
-  <ul>
     {% for ticket in output_ticket %}
-      <li> Ticket number: {{ticket.id}} </li> 
-      <li> Status: {{ticket.status}} </li> 
-      <li> Comments: {{ticket.comment}} </li>
+      <br />
+      <p class="text-error"> Ticket number: {{ticket.id}} </p>
+      <p class="text-success"> Status: {{ticket.status}} </p> 
+      <p class="text-info"> Comments: {{ticket.comment}} </p>
     {% endfor %}
-  </ul>
+  <br />
 {% else %}
   <p> You have no tickets booked yet </p>
 {% endif %}

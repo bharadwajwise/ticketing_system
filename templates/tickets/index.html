@@ -1,13 +1,28 @@
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 {% load bootstrap_toolkit %}
 
 {% if ticket_list %}
-  <ul>
+  <table class="table">
+  <caption> List of tickets already issued </caption>
+
+  <thead>
+  <th> Ticket Number </th>
+  <th> Created By </th>
+  <th> Time created at </th>
+  <th> Status </th>
+  <th> Comment </th>
+  </thead>
+  <tbody> 
   {% for ticket in ticket_list %}
-    <li> <a href="/tickets/{{ticket.id}}/"> The Ticket number {{ticket.id}} has been created by {{ticket.created_by}} at {{ticket.pub_date|date:"M-D-Y"}}.<br /> The ticket is now {{ticket.status}}. <br />Comments: {{ticket.comment}} </a></li>
+    <tr>
+      <td><a class="brand" href="/tickets/{{ticket.id}}/">{{ticket.id}}</a></td> 
+      <td><a class="brand" href="/tickets/{{ticket.id}}/">{{ticket.created_by}} </a></td> 
+      <td><a class="brand" href="/tickets/{{ticket.id}}/"> {{ticket.pub_date|date:"M-D-Y"}} </a></td> 
+      <td><a class="brand" href="/tickets/{{ticket.id}}/">{{ticket.status}}.</a></td> 
+      <td><a class="brand" href="/tickets/{{ticket.id}}/"> {{ticket.comment}} </a></td></tr>
   {% endfor %}
-  </ul>
+  </tbody>
+  </table>
 {% else %}
   <p> List of tickets is empty </p>
 {% endif %}

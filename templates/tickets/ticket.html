@@ -1,12 +1,11 @@
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 {% load bootstrap_toolkit %}
 {% if ticket %}
-    <p> Ticket ID: {{ticket.id}}</p>
-    <p> Ticket created by: {{ticket.created_by}} </p>
-    <p> Ticket published at: {{ticket.pub_date|date:"D-M-Y"}} </p>
-    <p> <b> Status of Ticket: </b> {{ticket.status}} </p>
-    <p> <i> Comments on Ticket: </i> {{ticket.comment}} </p>
+    <p class="text-success"> <b> Ticket ID: </b> {{ticket.id}} </li> 
+    <p class="text-warning"> <b> Ticket created by: </b> {{ticket.created_by}} </li> 
+    <p class="text-error"> <b> Ticket published at: </b> {{ticket.pub_date|date:"D-M-Y"}} </li> 
+    <p class="text-info"> <b> Status of Ticket: </b> {{ticket.status}} </li> 
+    <p class="muted"> <b> Comments on Ticket: </b> {{ticket.comment}} </li>
 {% else %}
   <p> This ticket is not available yet </p>
 {% endif %}

@@ -54,10 +54,13 @@ def add_ticket(request, userid):
 
 def view_ticket(request, userid):
     user_id = userid
+    userobject = Ticketuser.objects.get(id=user_id)
+    username = str(userobject)
     output_ticket = Ticket.objects.filter(created_by=userid)
     t = loader.get_template('tickets/user_view.html')
     c = Context({
          'user_id': userid,
-	 'output_ticket': output_ticket,
+     	 'output_ticket': output_ticket,
+         'username': username,
          })
     return HttpResponse(t.render(c))
