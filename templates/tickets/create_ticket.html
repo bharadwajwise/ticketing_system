@@ -1,6 +1,8 @@
-<form action="/create/{{ user_id }}/" method="post"> {% csrf_token %}
+{% load bootstrap_toolkit %}
+<form class="form-{{layout}}" action="/create/{{ user_id }}/" method="post"> {% csrf_token %}
   <ul>
-    {{form.as_p}}
+    {{ form|as_bootstrap:layout }}
+    <br />
+    <input type="submit" name="submit" value="Add Ticket" class="btn btn-primary" />
   </ul>
-  <input type="submit" name="submit" value="Add Ticket" />
 </form>

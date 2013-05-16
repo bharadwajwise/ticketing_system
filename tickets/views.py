@@ -7,6 +7,8 @@ from forms import AddTicketForm
 from django.core.context_processors import csrf
 from django.utils import timezone
 
+from bootstrap_toolkit.widgets import BootstrapUneditableInput
+
 def index(request):
     ticket_list = Ticket.objects.all()
     t = loader.get_template("tickets/index.html")
@@ -24,6 +26,9 @@ def detail(request, ticket_id):
     return HttpResponse(t.render(c))
 
 def add_ticket(request, userid):
+    layout = request.GET.get('layout')
+    if not layout:
+        layout = 'vertical'
     if request.method == 'POST':
         form = AddTicketForm(request.POST)
 	redirect_url = '/user/' + str(userid) 
@@ -43,17 +48,14 @@ def add_ticket(request, userid):
 	    'user_id': userid,
 	    'form': form,
 	}
-	redirect_url_2 = 'tickets/create_ticket.html'
-	return render_to_response(redirect_url_2, context, context_instance=RequestContext(request))
-# return HttpResponse(t.render(c)) 
+	return render_to_response('tickets/create_ticket.html', context, RequestContext(request, {
+	    'form': form,
+	    'layout': layout,
+	})) 
 
 def view_ticket(request, userid):
     user_id = userid
     output_ticket = Ticket.objects.filter(created_by=userid)
-    # assert False,"output_tickets--- %s"%output_ticket
-    # output_id = output_ticket.id
-    # output_status = output_ticket.status
-    # output_comment = output_ticket.comment
     t = loader.get_template('tickets/user_view.html')
     c = Context({
          'user_id': userid,

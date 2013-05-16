@@ -8,6 +8,5 @@ class AddTicketForm(forms.ModelForm):
   
   def process(self):
     data = self.cleaned_data
-    # assert False,"%s"%data
     data = data['comment']
     return data

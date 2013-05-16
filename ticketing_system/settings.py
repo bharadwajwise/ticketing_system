@@ -121,6 +121,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'tickets',
+    'bootstrap_toolkit',
+    'crispy_forms',
 )
 
 # A sample logging configuration. The only tangible logging
