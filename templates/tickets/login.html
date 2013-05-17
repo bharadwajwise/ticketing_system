@@ -6,6 +6,9 @@
 {% load bootstrap_toolkit %}
 </head>
 <body>
+{% if error %}
+    <p class="text-error"> Error: {{ error }}</p>
+{% endif %}
 <div class="container">
     <h2 class="form-signin-heading"> Log in </h2>
     <form action="/auth/" method="POST" class="form-signin"> {% csrf_token %}

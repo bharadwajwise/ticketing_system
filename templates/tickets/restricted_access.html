@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="./../../assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+{% load bootstrap_toolkit %}
+</head>
+<body>
+<div class="container">
+    <h2 class="text-error"> Restricted Access </h2>
+    {# <a href="/login/"> <button class="btn btn-primary"> Click Here to Login or Sign Up </button> </a> #}
+   	<a href="/user/{{ user_id }}"> <button class="btn btn-primary"> Click here to go back to your homepage  </button></a>
+</div>
+</body>
+</html>

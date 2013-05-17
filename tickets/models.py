@@ -10,5 +10,5 @@ class Ticket(models.Model):
 	created_by = models.ForeignKey(User)
 	
 	def __unicode__(self):
-		text = "This ticket was created by: " + self.created_by 
+		text = "This ticket was created by: " + str(self.created_by)
 		return text
