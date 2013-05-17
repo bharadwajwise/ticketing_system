@@ -1,12 +1,13 @@
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 {% load bootstrap_toolkit %}
+<div class="container">
 <h3> Tickets booked by {{ username }}</h3>
 {% if output_ticket %}
     {% for ticket in output_ticket %}
       <br />
-      <p class="text-error"> Ticket number: {{ticket.id}} </p>
-      <p class="text-success"> Status: {{ticket.status}} </p> 
-      <p class="text-info"> Comments: {{ticket.comment}} </p>
+      <div class="container"> <p class="text-error"> Ticket number: {{ticket.id}} </p></div>
+      <div class="container"><p class="text-success"> Status: {{ticket.status}} </p> </div>
+      <div class="container"><p class="text-info"> Comments: {{ticket.comment}} </p></div>
     {% endfor %}
   <br />
 {% else %}
@@ -14,4 +15,5 @@
 {% endif %}
 <br />
 <br />
-<p> <a href="/create/{{ user_id }}"> Book Tickets Here </a> </p>
+ <a href="/create/{{ user_id }}"> <button class="btn btn-success"> Book Tickets Here </button> </a> 
+</div>

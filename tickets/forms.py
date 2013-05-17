@@ -1,5 +1,6 @@
 from django import forms
-from models import Ticket, Ticketuser
+from models import Ticket
+from django.contrib.auth.models import User
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Fieldset, ButtonHolder, HTML, Submit, Div, Row, Button, Field
 from crispy_forms.bootstrap import FormActions, PrependedText, AppendedText

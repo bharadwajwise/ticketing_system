@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="./../../assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+{% load bootstrap_toolkit %}
+</head>
+<body>
+<div class="container">
+    <h2 class="form-signin-heading"> Log in </h2>
+    <form action="/auth/" method="POST" class="form-signin"> {% csrf_token %}
+        <input type="text" name="username" id="username" value="" placeholder="Username" class="input-small" />
+        <input type="password" name="password" id="password" placeholder="Password" value="" class="password" />
+        <button type="submit" class="btn btn-large btn-primary" name="submit" value="submit-value"> Log In </button>
+    </form>
+</div>
+<div class="container">
+    <h2 class="form-signup-heading"> <br /><br /> Sign up </h2>
+    <form action="/signup/" method="POST" class="form-signup"> {% csrf_token %}
+        <input type="text" name="username" id="username" value="" class="input-small" placeholder="Username"/>
+        <input type="password" name="password" id="password" value="" class="password" placeholder="Password"/> 
+        <button type="submit" name="submit" value="submit-value" class="btn btn-large"> Sign up </button>
+    </form>
+</div>
+</body>
+</html>
